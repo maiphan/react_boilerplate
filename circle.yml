@@ -1,0 +1,16 @@
+machine:
+  node:
+    version: 9.2.0
+  timezone: Asia/Ho_Chi_Minh
+
+dependencies:
+  override:
+    - yarn
+
+test:
+  override:
+    - yarn test -- --maxWorkers 2
+    - yarn lint
+    - yarn flow
+  post:
+    - yarn coveralls
