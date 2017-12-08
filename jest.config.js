@@ -30,8 +30,8 @@ module.exports = {
   snapshotSerializers: [
     'enzyme-to-json/serializer',
   ],
-  setupFiles: ["<rootDir>/polyfill.config.js", "<rootDir>/enzyme.config.js"],
+  setupFiles: ['<rootDir>/polyfill.config.js', '<rootDir>/enzyme.config.js'],
   globals: {
     ROUTERS_FAKE_ROOT: '/fake/root',
-  }
+  },
 };

@@ -1,10 +1,15 @@
-import React from "react";
-import { render } from "react-dom";
-import DevTools from "mobx-react-devtools";
+// @flow
 
-render(
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { useStrict } from 'mobx';
+
+
+useStrict(true);
+
+ReactDOM.render(
   <div>
     Hello
   </div>,
-  document.getElementById("root")
+  (document.getElementById('root'): any),
 );

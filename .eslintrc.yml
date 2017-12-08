@@ -1,0 +1,70 @@
+---
+extends:
+  - airbnb
+  - plugin:flowtype/recommended
+  - plugin:lodash/recommended
+  - plugin:jest/recommended
+  - plugin:css-modules/recommended
+
+plugins:
+  - flowtype
+  - jest
+  - lodash
+  - css-modules
+
+rules:
+  no-underscore-dangle: off
+  class-methods-use-this: off
+  global-require: off
+  max-len: ['error', 120]
+  no-console: ['error', { allow: ['warn', 'error'] }]
+  no-restricted-syntax: ['error', 'LabeledStatement', 'WithStatement']
+
+  no-unused-vars:
+    - error
+    - argsIgnorePattern: "[iI]gnored"
+      ignoreRestSiblings: true
+
+  import/newline-after-import:
+    - error
+    - count: 2
+
+  react/jsx-filename-extension: off
+  react/prop-types: off
+  react/sort-comp: off
+  react/require-default-props: off
+
+  lodash/prefer-lodash-method: off
+  lodash/prefer-lodash-typecheck: off
+  lodash/prefer-constant: off
+
+  # TODO: turn on these import rules
+  import/no-unresolved: off
+  import/no-extraneous-dependencies: off
+  import/extensions: off
+  import/no-named-as-default: off
+  import/prefer-default-export: off
+
+  # TODO: turn on these a11y rules
+  jsx-a11y/alt-text: off
+  jsx-a11y/label-has-for: off
+  jsx-a11y/no-noninteractive-element-interactions: off
+  jsx-a11y/no-static-element-interactions: off
+  jsx-a11y/no-noninteractive-tabindex: off
+
+  css-modules/no-unused-class: [2, { camelCase: true }]
+  css-modules/no-undef-class: [2, { camelCase: true }]
+
+overrides:
+  - files: ['**/*.test.js']
+    rules:
+      css-modules/no-unused-class: off
+      css-modules/no-undef-class: off
+
+env:
+  browser: true
+  jest/globals: true
+
+globals:
+  DEPLOY_ENV: true
+  ROUTERS_FAKE_ROOT: true

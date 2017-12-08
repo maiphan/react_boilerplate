@@ -1,0 +1,21 @@
+[ignore]
+.*/node_modules/enzyme-matchers/lib/.*
+.*/node_modules/jest-enzyme/lib/index.js.flow
+
+[include]
+
+[libs]
+flow-typed/npm
+flow-typed/custom
+
+[options]
+module.system.node.resolve_dirname=node_modules
+module.system.node.resolve_dirname=.
+esproposal.decorators=ignore
+unsafe.enable_getters_and_setters=true
+# use $FlowFixMe for unresolved technical problem
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+# use $FlowIgnore if we think it is not a problem
+suppress_comment= \\(.\\|\n\\)*\\$FlowIgnore
+# use $FlowExpect for expected flow error (used for flow tests)
+suppress_comment= \\(.\\|\n\\)*\\$FlowExpect
